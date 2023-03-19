@@ -1,1 +1,1 @@
-export const API_PREFIX = "http://localhost:8080/api";
+export const API_PREFIX = "https://saoif-guild-monitoring-backend.fly.dev/api";
