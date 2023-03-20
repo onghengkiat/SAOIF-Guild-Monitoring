@@ -19,7 +19,7 @@ export async function loginUser(credentials, setSnackbarMessage, setToken) {
     .then((data) => {
       setSnackbarMessage({
         severity: "success",
-        message: "Login successfully",
+        message: "登入成功",
       });
 
       setToken({
@@ -39,7 +39,7 @@ export async function loginUser(credentials, setSnackbarMessage, setToken) {
     .catch((error) => {
       setSnackbarMessage({
         severity: "error",
-        message: "Something went wrong in communicating the server!",
+        message: "伺服器有問題，請通知管理員",
       });
     });
 }
@@ -68,7 +68,7 @@ export async function logoutUser(setSnackbarMessage, setToken) {
       });
       setSnackbarMessage({
         severity: "success",
-        message: "Logout successfully",
+        message: "登出成功",
       });
     })
     .catch((error) => {

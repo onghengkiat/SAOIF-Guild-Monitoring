@@ -30,7 +30,7 @@ export async function getAllCategoriesAndSubcategories(
     .catch((error) => {
       setSnackbarMessage({
         severity: "error",
-        message: "Something went wrong in communicating the server!",
+        message: "伺服器有問題，請通知管理員",
       });
     });
 }
@@ -71,7 +71,7 @@ export async function getAllCardCounts(setSnackbarMessage, setData, page) {
     .catch((error) => {
       setSnackbarMessage({
         severity: "error",
-        message: "Something went wrong in communicating the server!",
+        message: "伺服器有問題，請通知管理員",
       });
     });
 }
@@ -141,7 +141,7 @@ export async function updateCardCounts(
     .catch((error) => {
       setSnackbarMessage({
         severity: "error",
-        message: "Something went wrong in communicating the server!",
+        message: "伺服器有問題，請通知管理員",
       });
     });
 }

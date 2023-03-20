@@ -26,7 +26,7 @@ export async function getUserProfile(setSnackbarMessage, setData) {
     .catch((error) => {
       setSnackbarMessage({
         severity: "error",
-        message: "Something went wrong in communicating the server!",
+        message: "伺服器有問題，請通知管理員",
       });
     });
 }
@@ -73,7 +73,7 @@ export async function updateUserProfile(
     .catch((error) => {
       setSnackbarMessage({
         severity: "error",
-        message: "Something went wrong in communicating the server!",
+        message: "伺服器有問題，請通知管理員",
       });
     });
 }
@@ -116,7 +116,7 @@ export async function changePassword(
     .catch((error) => {
       setSnackbarMessage({
         severity: "error",
-        message: "Something went wrong in communicating the server!",
+        message: "伺服器有問題，請通知管理員",
       });
     });
 }

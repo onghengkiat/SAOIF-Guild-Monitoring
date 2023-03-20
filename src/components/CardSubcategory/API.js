@@ -38,7 +38,7 @@ export async function getAllCategoriesIds(
     .catch((error) => {
       setSnackbarMessage({
         severity: "error",
-        message: "Something went wrong in communicating the server!",
+        message: "伺服器有問題，請通知管理員",
       });
     });
 }
@@ -75,7 +75,7 @@ export async function getAllSubcategories(setSnackbarMessage, setData) {
     .catch((error) => {
       setSnackbarMessage({
         severity: "error",
-        message: "Something went wrong in communicating the server!",
+        message: "伺服器有問題，請通知管理員",
       });
     });
 }
@@ -134,7 +134,7 @@ export async function addSubcategory(
     .catch((error) => {
       setSnackbarMessage({
         severity: "error",
-        message: "Something went wrong in communicating the server!",
+        message: "伺服器有問題，請通知管理員",
       });
     });
 }
@@ -192,7 +192,7 @@ export async function updateSubcategory(
     .catch((error) => {
       setSnackbarMessage({
         severity: "error",
-        message: "Something went wrong in communicating the server!",
+        message: "伺服器有問題，請通知管理員",
       });
     });
 }
@@ -239,7 +239,7 @@ export async function deleteSubcategory(
     .catch((error) => {
       setSnackbarMessage({
         severity: "error",
-        message: "Something went wrong in communicating the server!",
+        message: "伺服器有問題，請通知管理員",
       });
     });
 }

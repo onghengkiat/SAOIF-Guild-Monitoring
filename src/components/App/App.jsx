@@ -5,7 +5,9 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
-// import GlobalStyles from "./GlobalStyles";
+import GlobalStyles from './GlobalStyles';
+import createMuiTheme from './Theme';
+import { ThemeProvider } from '@mui/material/styles';
 
 import AuthRoute from "./AuthRoute";
 
@@ -21,6 +23,7 @@ import CardSubcategory from "../CardSubcategory/CardSubcategory";
 import UserProfile from "../UserProfile/UserProfile";
 
 function App() {
+  const theme = createMuiTheme();
   const { token, setToken } = useToken();
 
   const [loading, setLoading] = useState(false);
@@ -77,11 +80,12 @@ function App() {
     }
   ]);
   return (
-    <div className="app">
+    <ThemeProvider theme={theme}><User setSnackbarMessage={setSnackbarMessage} setLoading={setLoading}/>
+      <GlobalStyles />
       <NotificationPopup setSnackbarMessage={setSnackbarMessage} snackbarMessage={snackbarMessage} />
       <LoadingSpinner loading={loading}/>
       <RouterProvider router={router} />
-    </div>
+    </ThemeProvider>
   );
 }
 

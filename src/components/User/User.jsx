@@ -4,6 +4,7 @@ import DetailDialog from "./DetailDialog";
 import EditDialog from "./EditDialog";
 import AddDialog from "./AddDialog";
 import { StyledDataGrid } from "./StyledDataGrid";
+import { zhTW } from "@mui/x-data-grid";
 import getColumns from "./DataGridColumns";
 
 import Typography from "@mui/material/Typography";
@@ -33,7 +34,7 @@ export default function User({ setSnackbarMessage, setLoading }) {
     async function fetchData() {
       setLoading(true);
 
-      await getAllUsers(setSnackbarMessage, setData);
+      //await getAllUsers(setSnackbarMessage, setData);
 
       setLoading(false);
     }
@@ -95,6 +96,7 @@ export default function User({ setSnackbarMessage, setLoading }) {
         setData={setData}
       />
       <StyledDataGrid
+      //localeText={zhTW.components.MuiDataGrid.defaultProps.localeText}
         rows={data}
         columns={
           getColumns(
