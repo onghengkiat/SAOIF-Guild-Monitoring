@@ -62,7 +62,7 @@ export async function updateUserProfile(
       });
       setSnackbarMessage({
         severity: "success",
-        message: "Your profile has been edited successfully!",
+        message: data.message,
       });
       setEditing(false);
     })
