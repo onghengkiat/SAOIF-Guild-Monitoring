@@ -4,7 +4,6 @@ import DetailDialog from "./DetailDialog";
 import EditDialog from "./EditDialog";
 import AddDialog from "./AddDialog";
 import { StyledDataGrid } from "./StyledDataGrid";
-import { zhTW } from "@mui/x-data-grid";
 import getColumns from "./DataGridColumns";
 
 import Typography from "@mui/material/Typography";
@@ -29,6 +28,19 @@ export default function User({ setSnackbarMessage, setLoading }) {
   const [openDeleteConfirmDialog, setOpenDeleteConfirmDialog] = useState(false);
   const [data, setData] = useState([]);
   const [selectedData, setSelectedData] = useState(null);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleWindowResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleWindowResize);
+
+    return () => {
+      window.removeEventListener('resize', handleWindowResize);
+    };
+  });
 
   useEffect(() => {
     async function fetchData() {
@@ -63,7 +75,7 @@ export default function User({ setSnackbarMessage, setLoading }) {
 
   return (
     <Fragment>
-      <Typography component="h2" variant="h6" color="primary" m={2} px={3}>
+      <Typography component="h2" variant="h6" color="primary" my={2} mx={windowWidth <= 480 ? 0 : 2} px={windowWidth <= 480 ? 0 : 3}>
         用戶列表
       </Typography>
 
@@ -96,7 +108,10 @@ export default function User({ setSnackbarMessage, setLoading }) {
         setData={setData}
       />
       <StyledDataGrid
-      //localeText={zhTW.components.MuiDataGrid.defaultProps.localeText}
+        sx={{
+          margin: windowWidth <= 480 ? "10px 0" : "10px 40px",
+          padding: windowWidth <= 480 ? "10px 0" : "10px 10px"
+        }}
         rows={data}
         columns={
           getColumns(

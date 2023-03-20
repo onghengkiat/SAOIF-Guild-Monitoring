@@ -28,6 +28,19 @@ export default function CardCount({ setSnackbarMessage, setLoading }) {
   const [availableSubcategories, setAvailableSubcategories] = useState([]);
   const [selectedData, setSelectedData] = useState(null);
   const [selectedPage, setSelectedPage] = useState("");
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleWindowResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleWindowResize);
+
+    return () => {
+      window.removeEventListener('resize', handleWindowResize);
+    };
+  });
 
   useEffect(() => {
     setSelectedPage(PAGES.Mod);
@@ -79,7 +92,7 @@ export default function CardCount({ setSnackbarMessage, setLoading }) {
 
   return (
     <Fragment>
-      <Typography component="h2" variant="h6" color="primary" m={2} px={3}>
+      <Typography component="h2" variant="h6" color="primary" my={2} mx={windowWidth <= 480 ? 0 : 2} px={windowWidth <= 480 ? 0 : 3}>
       卡牌統計
       </Typography>
       <Box
@@ -136,6 +149,10 @@ export default function CardCount({ setSnackbarMessage, setLoading }) {
         selectedPage={selectedPage}
       />
       <StyledDataGrid
+        sx={{
+          margin: windowWidth <= 480 ? "10px 0" : "10px 40px",
+          padding: windowWidth <= 480 ? "10px 0" : "10px 10px"
+        }}
         rows={data}
         columns={getColumns(
           setOpenDetailDialog,

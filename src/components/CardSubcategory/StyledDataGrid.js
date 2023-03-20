@@ -2,7 +2,6 @@ import { DataGrid } from "@mui/x-data-grid";
 import { styled } from "@mui/material/styles";
 
 export const StyledDataGrid = styled(DataGrid)(({ theme }) => ({
-  margin: "10px 40px",
   height: "calc(100% - 150px)",
   minWidth: "400px",
   minHeight: "420px",
