@@ -3,7 +3,6 @@ import { styled } from "@mui/material/styles";
 
 export const StyledDataGrid = styled(DataGrid)(({ theme }) => ({
   height: "calc(100% - 150px)",
-  minWidth: "400px",
   minHeight: "420px",
   background:
     theme.palette.mode === "light" ? "rgba(255,255,255)" : "rgba(0,0,0)",
