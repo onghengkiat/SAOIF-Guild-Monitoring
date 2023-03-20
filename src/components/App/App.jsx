@@ -80,7 +80,7 @@ function App() {
     }
   ]);
   return (
-    <ThemeProvider theme={theme}><User setSnackbarMessage={setSnackbarMessage} setLoading={setLoading}/>
+    <ThemeProvider theme={theme}>
       <GlobalStyles />
       <NotificationPopup setSnackbarMessage={setSnackbarMessage} snackbarMessage={snackbarMessage} />
       <LoadingSpinner loading={loading}/>
