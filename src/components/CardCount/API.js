@@ -18,6 +18,10 @@ export async function getAllCategoriesAndSubcategories(
     })
     .then((data) => {
       setCategoriesAndSubcategories(data.data);
+      setSnackbarMessage({
+        severity: "success",
+        message: data.message,
+      });
     })
     .catch((error) => {
       error.json().then((response) => {
@@ -59,6 +63,10 @@ export async function getAllCardCounts(setSnackbarMessage, setData, page) {
           );
         })
       );
+      setSnackbarMessage({
+        severity: "success",
+        message: data.message,
+      });
     })
     .catch((error) => {
       error.json().then((response) => {

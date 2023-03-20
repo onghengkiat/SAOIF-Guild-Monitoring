@@ -20,6 +20,10 @@ export async function getAllCategories(setSnackbarMessage, setData) {
           };
         })
       );
+      setSnackbarMessage({
+        severity: "success",
+        message: data.message,
+      });
     })
     .catch((error) => {
       error.json().then((response) => {

@@ -34,7 +34,7 @@ export default function User({ setSnackbarMessage, setLoading }) {
     async function fetchData() {
       setLoading(true);
 
-      //await getAllUsers(setSnackbarMessage, setData);
+      await getAllUsers(setSnackbarMessage, setData);
 
       setLoading(false);
     }

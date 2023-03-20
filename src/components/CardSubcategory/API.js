@@ -26,6 +26,10 @@ export async function getAllCategoriesIds(
           };
         })
       );
+      setSnackbarMessage({
+        severity: "success",
+        message: data.message,
+      });
     })
     .catch((error) => {
       error.json().then((response) => {
@@ -63,6 +67,10 @@ export async function getAllSubcategories(setSnackbarMessage, setData) {
           };
         })
       );
+      setSnackbarMessage({
+        severity: "success",
+        message: data.message,
+      });
     })
     .catch((error) => {
       error.json().then((response) => {

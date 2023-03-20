@@ -14,6 +14,10 @@ export async function getUserProfile(setSnackbarMessage, setData) {
     })
     .then((data) => {
       setData(data.data);
+      setSnackbarMessage({
+        severity: "success",
+        message: data.message,
+      });
     })
     .catch((error) => {
       error.json().then((response) => {

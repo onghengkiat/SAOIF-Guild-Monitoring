@@ -17,15 +17,14 @@ export async function loginUser(credentials, setSnackbarMessage, setToken) {
       throw response;
     })
     .then((data) => {
-      setSnackbarMessage({
-        severity: "success",
-        message: "登入成功",
-      });
-
       setToken({
         isLoggedIn: true,
         role: data.data.role,
         username: data.data.username,
+      });
+      setSnackbarMessage({
+        severity: "success",
+        message: data.message,
       });
     })
     .catch((error) => {
@@ -68,7 +67,7 @@ export async function logoutUser(setSnackbarMessage, setToken) {
       });
       setSnackbarMessage({
         severity: "success",
-        message: "登出成功",
+        message: data.message,
       });
     })
     .catch((error) => {
