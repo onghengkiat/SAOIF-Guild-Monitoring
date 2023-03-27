@@ -66,7 +66,12 @@ export default function CardSubcategory({ setSnackbarMessage, setLoading }) {
         <GridToolbarColumnsButton />
         <GridToolbarFilterButton />
         <GridToolbarDensitySelector />
-        <GridToolbarExport />
+        <GridToolbarExport
+          csvOptions={{
+            utf8WithBom: true
+          }} 
+          fileName="卡牌副類別"
+        />
 
         <Button size="small" startIcon={<AddIcon />} onClick={handleAddButton}>
           添加新副類別

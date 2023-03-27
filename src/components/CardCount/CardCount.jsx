@@ -85,7 +85,12 @@ export default function CardCount({ setSnackbarMessage, setLoading }) {
         <GridToolbarColumnsButton />
         <GridToolbarFilterButton />
         <GridToolbarDensitySelector />
-        <GridToolbarExport />
+        <GridToolbarExport
+          csvOptions={{
+            utf8WithBom: true
+          }} 
+          fileName="卡牌統計"
+        />
       </GridToolbarContainer>
     );
   }

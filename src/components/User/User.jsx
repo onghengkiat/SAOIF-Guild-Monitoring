@@ -64,7 +64,12 @@ export default function User({ setSnackbarMessage, setLoading }) {
         <GridToolbarColumnsButton />
         <GridToolbarFilterButton />
         <GridToolbarDensitySelector />
-        <GridToolbarExport />
+        <GridToolbarExport
+          csvOptions={{
+            utf8WithBom: true
+          }}  
+          fileName="用戶列表"
+        />
 
         <Button size="small" startIcon={<AddIcon />} onClick={handleAddButton}>
           添加新用戶
