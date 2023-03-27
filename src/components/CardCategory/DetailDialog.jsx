@@ -28,20 +28,20 @@ export default function DetailDialog({ setOpenDetailDialog, openDetailDialog, de
                     value={detailDialogData?.id}
                 />
                 <TextField
-                    id="label"
-                    label="類別名"
-                    margin="normal"
-                    fullWidth
-                    InputProps={{readOnly: true}}
-                    value={detailDialogData?.label}
-                />
-                <TextField
                     id="page"
                     label="頁面"
                     margin="normal"
                     fullWidth
                     InputProps={{readOnly: true}}
                     value={PAGES_LABELS[detailDialogData?.page]}
+                />
+                <TextField
+                    id="label"
+                    label="類別名"
+                    margin="normal"
+                    fullWidth
+                    InputProps={{readOnly: true}}
+                    value={detailDialogData?.label}
                 />
                 <TextField
                     id="orderNumber"
